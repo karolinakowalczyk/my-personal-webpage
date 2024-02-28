@@ -1,16 +1,30 @@
 <div class="app">
-  <div class="app__container">
+  <div
+    @fadeIn
+    class="app__container"
+    [class.app__container--content]="this.currentTabIndex !== 0"
+    #appContainer
+  >
     <div class="app__content-container">
       <div class="app__content">
-        <mat-tab-group headerPosition="below">
+        <mat-tab-group
+          class="app__mat-tab-group"
+          [class.app__mat-tab-group--moved]="this.currentTabIndex !== 0"
+          [headerPosition]="position"
+          (selectedIndexChange)="tabChanged($event)"
+        >
           <mat-tab label="Home"><app-home></app-home></mat-tab>
           <mat-tab label="About"><app-about></app-about></mat-tab>
           <mat-tab label="Projects"><app-projects></app-projects></mat-tab>
           <mat-tab label="Contact"><app-contact></app-contact></mat-tab>
         </mat-tab-group>
       </div>
-      <div class="app__main-photo">
-        <p>photo</p>
+      <div
+        [ngClass]="
+          this.currentTabIndex === 0 ? 'app__main-photo' : 'app__no-photo'
+        "
+      >
+        <p class="app__main-photo--image">photo</p>
       </div>
     </div>
   </div>

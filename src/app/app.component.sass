@@ -3,10 +3,10 @@
 .app
     height: 100vh
     width: 100vw
+    position: relative
 
     .app__container
         display: flex
-        flex-direction: column
         justify-content: center
         height: 100%
 
@@ -22,4 +22,21 @@
         width: 70%
 
     .app__main-photo
+        display: flex
+        flex-direction: column
         width: 30%
+
+    .app__no-photo
+        display: none
+
+    .app__mat-tab-group
+        background-color: purple
+        position: relative
+        z-index: 2
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        transition: top ease 2s
+
+    .app__mat-tab-group--moved
+        top: 8%
