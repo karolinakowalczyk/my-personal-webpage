@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatTabHeaderPosition } from '@angular/material/tabs';
 
 const enterTransition = transition(':enter', [
@@ -13,6 +13,7 @@ const fadeIn = trigger('fadeIn', [enterTransition]);
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
+  encapsulation: ViewEncapsulation.None,
   animations: [fadeIn],
 })
 export class AppComponent {

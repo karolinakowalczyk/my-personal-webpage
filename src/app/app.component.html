@@ -6,7 +6,10 @@
     #appContainer
   >
     <div class="app__content-container">
-      <div class="app__content">
+      <div
+        class="app__content"
+        [class.app__content--moved]="this.currentTabIndex !== 0"
+      >
         <mat-tab-group
           class="app__mat-tab-group"
           [class.app__mat-tab-group--moved]="this.currentTabIndex !== 0"

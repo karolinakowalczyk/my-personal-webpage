@@ -21,6 +21,9 @@
         flex-direction: column
         width: 70%
 
+    .app__content--moved
+        width: 100%
+
     .app__main-photo
         display: flex
         flex-direction: column
@@ -30,13 +33,18 @@
         display: none
 
     .app__mat-tab-group
-        background-color: purple
         position: relative
         z-index: 2
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
-        transition: top ease 2s
+        transition: top ease 0.5s
+
+    .app__mat-tab-group > .mat-mdc-tab-header
+        max-width: 600px
 
     .app__mat-tab-group--moved
         top: 8%
+
+    .app__mat-tab-group--moved > .mat-mdc-tab-header
+        left: 50%
