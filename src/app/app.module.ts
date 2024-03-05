@@ -9,7 +9,11 @@ import { ContactComponent } from './components/contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTabsModule } from '@angular/material/tabs';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MenuDialogComponent } from './components/menu-dialog/menu-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +21,17 @@ import { MatTabsModule } from '@angular/material/tabs';
     AboutComponent,
     ProjectsComponent,
     ContactComponent,
+    MenuDialogComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatTabsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

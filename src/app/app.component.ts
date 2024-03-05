@@ -1,6 +1,8 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatTabHeaderPosition } from '@angular/material/tabs';
+import { MatDialog } from '@angular/material/dialog';
+import { MenuDialogComponent } from './components/menu-dialog/menu-dialog.component';
 
 const enterTransition = transition(':enter', [
   style({
@@ -20,11 +22,25 @@ export class AppComponent {
   @ViewChild('appContainer') appContainer: HTMLElement;
   currentTabIndex = 0;
   position = 'below' as MatTabHeaderPosition;
+  fullName = 'Name surname';
+
+  constructor(public dialog: MatDialog) {}
 
   tabChanged($event: number): void {
     this.currentTabIndex = $event;
     this.currentTabIndex === 0
       ? (this.position = 'below')
       : (this.position = 'above');
+  }
+
+  openMenuDialog() {
+    const dialogRef = this.dialog.open(MenuDialogComponent, {
+      height: '100%',
+      width: '100%',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }
