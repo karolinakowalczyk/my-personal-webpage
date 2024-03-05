@@ -10,6 +10,12 @@
         class="app__content"
         [class.app__content--moved]="this.currentTabIndex !== 0"
       >
+        <h1
+          class="app--full-name"
+          [class.app--full-name-moved]="this.currentTabIndex !== 0"
+        >
+          {{ fullName }}
+        </h1>
         <mat-tab-group
           class="app__mat-tab-group"
           [class.app__mat-tab-group--moved]="this.currentTabIndex !== 0"
@@ -30,5 +36,13 @@
         <p class="app__main-photo--image">photo</p>
       </div>
     </div>
+    <button
+      class="app__hamburger-button"
+      mat-icon-button
+      (click)="openMenuDialog()"
+      aria-label="Hamburger icon-button"
+    >
+      <mat-icon>reorder</mat-icon>
+    </button>
   </div>
 </div>

@@ -7,14 +7,25 @@
 
     .app__container
         display: flex
-        justify-content: center
         height: 100%
+
+    .app__hamburger-button
+        @media (min-width: $desktop-width)
+            display: none
 
     .app__content-container
         display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
         margin: 0 auto
         padding: 0 16px
         width: 80%
+
+        @media (min-width: $desktop-width)
+            flex-direction: row
+            justify-content: flex-start
+            align-items: stretch
 
     .app__content
         display: flex
@@ -33,12 +44,15 @@
         display: none
 
     .app__mat-tab-group
+        display: none
         position: relative
         z-index: 2
-        top: 50%
+        top: 40%
         left: 50%
         transform: translate(-50%, -50%)
         transition: top ease 0.5s
+        @media (min-width: $desktop-width)
+            display: block
 
     .app__mat-tab-group > .mat-mdc-tab-header
         max-width: 600px
@@ -48,3 +62,28 @@
 
     .app__mat-tab-group--moved > .mat-mdc-tab-header
         left: 50%
+
+    .app--full-name
+        font-size: 48px
+        font-weight: 700
+        position: relative
+        z-index: 2
+        top: 40%
+        left: 50%
+        padding-bottom: 16px
+        transform: translate(-50%, -50%)
+
+        transition: top ease 0.5s, font-size ease-in 0.5s
+
+    .app--full-name-moved
+        position: absolute
+        transform: translate(0)
+        top: 1.5%
+        left: 0
+        display: flex
+        padding: 0 16px
+        font-size: 26px
+        padding-bottom: 0
+
+        @media (min-width: $desktop-width)
+            font-size: 36px

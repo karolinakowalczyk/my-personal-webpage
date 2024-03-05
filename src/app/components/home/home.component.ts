@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.sass'],
 })
-export class HomeComponent {
-  fullName = 'Name surname';
-}
+export class HomeComponent {}
