@@ -38,9 +38,5 @@ export class AppComponent {
       height: '100%',
       width: '100%',
     });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
   }
 }
