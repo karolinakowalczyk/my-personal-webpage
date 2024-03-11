@@ -10,6 +10,9 @@
         height: 100%
 
     .app__hamburger-button
+        position: absolute
+        top: 0
+        right: 0
         @media (min-width: $desktop-width)
             display: none
 
@@ -18,18 +21,25 @@
         flex-direction: column
         justify-content: center
         align-items: center
-        margin: 0 auto
-        padding: 0 16px
-        width: 80%
+        padding: 0 12px
+        width: 100%
 
+        @media (min-width: $tablet-width)
+            margin: 0 auto
+            padding: 0 16px
+            width: 80%
         @media (min-width: $desktop-width)
             flex-direction: row
             justify-content: flex-start
             align-items: stretch
 
+    .app__content-container--moved
+        justify-content: start
+
     .app__content
         display: flex
         flex-direction: column
+        position: relative
         width: 70%
 
     .app__content--moved
@@ -38,6 +48,7 @@
     .app__main-photo
         display: flex
         flex-direction: column
+        justify-content: center
         width: 30%
 
     .app__no-photo
@@ -64,7 +75,7 @@
         left: 50%
 
     .app--full-name
-        font-size: 48px
+        font-size: 36px
         font-weight: 700
         position: relative
         z-index: 2
@@ -72,18 +83,26 @@
         left: 50%
         padding-bottom: 16px
         transform: translate(-50%, -50%)
-
         transition: top ease 0.5s, font-size ease-in 0.5s
+        width: fit-content
+
+        @media (min-width: $desktop-width)
+            font-size: 48px
+            width: auto
 
     .app--full-name-moved
         position: absolute
+        display: inline-flex
         transform: translate(0)
-        top: 1.5%
+        top: 0
         left: 0
-        display: flex
         padding: 0 16px
         font-size: 26px
         padding-bottom: 0
+        width: fit-content
 
         @media (min-width: $desktop-width)
             font-size: 36px
+
+    .app__main-photo--image
+        border-radius: 50%

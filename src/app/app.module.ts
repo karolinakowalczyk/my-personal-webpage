@@ -14,6 +14,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MenuDialogComponent } from './components/menu-dialog/menu-dialog.component';
+import { MatListModule } from '@angular/material/list';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,7 @@ import { MenuDialogComponent } from './components/menu-dialog/menu-dialog.compon
     MatButtonModule,
     MatMenuModule,
     MatDialogModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

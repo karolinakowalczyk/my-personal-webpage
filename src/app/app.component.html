@@ -5,7 +5,10 @@
     [class.app__container--content]="this.currentTabIndex !== 0"
     #appContainer
   >
-    <div class="app__content-container">
+    <div
+      class="app__content-container"
+      [class.app__content-container--moved]="this.currentTabIndex !== 0"
+    >
       <div
         class="app__content"
         [class.app__content--moved]="this.currentTabIndex !== 0"
@@ -33,16 +36,20 @@
           this.currentTabIndex === 0 ? 'app__main-photo' : 'app__no-photo'
         "
       >
-        <p class="app__main-photo--image">photo</p>
+        <img
+          class="app__main-photo--image"
+          src="../assets/img/female-profile-picture.jpg"
+          alt="profile image"
+        />
       </div>
+      <button
+        class="app__hamburger-button"
+        mat-icon-button
+        (click)="openMenuDialog()"
+        aria-label="Hamburger icon-button"
+      >
+        <mat-icon>reorder</mat-icon>
+      </button>
     </div>
-    <button
-      class="app__hamburger-button"
-      mat-icon-button
-      (click)="openMenuDialog()"
-      aria-label="Hamburger icon-button"
-    >
-      <mat-icon>reorder</mat-icon>
-    </button>
   </div>
 </div>
