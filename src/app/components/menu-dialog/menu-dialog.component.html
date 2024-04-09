@@ -8,13 +8,18 @@
       <mat-icon>close</mat-icon>
     </button>
   </mat-dialog-actions>
-  <mat-dialog-content class="mat-typography" cdkFocusInitial>
+  <mat-dialog-content class="mat-typography">
     <div class="app-menu-dialog--content">
-      <mat-list>
-        <mat-list-item>Pepper</mat-list-item>
-        <mat-list-item>Salt</mat-list-item>
-        <mat-list-item>Paprika</mat-list-item>
-      </mat-list>
+      <mat-tab-group
+        class="vertical"
+        [selectedIndex]="data.activeTab"
+        (selectedIndexChange)="mobileTabChanged($event)"
+      >
+        <mat-tab label="Home"></mat-tab>
+        <mat-tab label="About"></mat-tab>
+        <mat-tab label="Projects"></mat-tab>
+        <mat-tab label="Contact"></mat-tab>
+      </mat-tab-group>
     </div>
   </mat-dialog-content>
 </div>
