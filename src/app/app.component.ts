@@ -34,9 +34,22 @@ export class AppComponent {
   }
 
   openMenuDialog() {
-    const dialogRef = this.dialog.open(MenuDialogComponent, {
+    const mobileMenuDialog = this.dialog.open(MenuDialogComponent, {
       height: '100%',
       width: '100%',
+      autoFocus: false,
+      data: {
+        activeTab: this.currentTabIndex,
+      },
+    });
+
+    const sub = mobileMenuDialog.componentInstance.indexChanged.subscribe(
+      (index) => {
+        this.currentTabIndex = index;
+      }
+    );
+    mobileMenuDialog.afterClosed().subscribe(() => {
+      sub.unsubscribe();
     });
   }
 }
