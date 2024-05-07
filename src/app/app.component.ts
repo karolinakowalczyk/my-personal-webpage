@@ -38,6 +38,7 @@ export class AppComponent {
       height: '100%',
       width: '100%',
       autoFocus: false,
+      restoreFocus: false,
       data: {
         activeTab: this.currentTabIndex,
       },

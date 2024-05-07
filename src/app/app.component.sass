@@ -40,6 +40,7 @@
 
     .app__content--moved
         width: 100%
+        margin-top: 1rem
 
     .app__main-photo
         display: flex
@@ -77,7 +78,6 @@
         z-index: 2
         top: 40%
         left: 50%
-        padding-bottom: 16px
         transform: translate(-50%, -50%)
         transition: top ease 0.5s, font-size ease-in 0.5s
         width: fit-content
@@ -85,6 +85,7 @@
         @media (min-width: $desktop-width)
             font-size: 48px
             width: auto
+            padding-bottom: 32px
 
     .app--full-name-moved
         position: absolute
@@ -104,8 +105,13 @@
         border-radius: 50%
 
     .app__mobile-content
+        padding-bottom: 1rem
         @media (min-width: $desktop-width)
             display: none
+
+    .app__mobile-content--moved
+        margin-top: 4rem
+        padding-bottom: 0
 
 .app--moved
     align-items: flex-start

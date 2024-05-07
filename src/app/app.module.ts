@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MenuDialogComponent } from './components/menu-dialog/menu-dialog.component';
 import { MatListModule } from '@angular/material/list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -35,6 +36,7 @@ import { AppRoutingModule } from './app-routing.module';
     MatMenuModule,
     MatDialogModule,
     MatListModule,
+    MatProgressBarModule,
     AppRoutingModule,
   ],
   providers: [],
