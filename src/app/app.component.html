@@ -15,7 +15,11 @@
       >
         {{ fullName }}
       </h1>
-      <div class="app__mobile-content" [ngSwitch]="currentTabIndex">
+      <div
+        class="app__mobile-content"
+        [class.app__mobile-content--moved]="this.currentTabIndex !== 0"
+        [ngSwitch]="currentTabIndex"
+      >
         <app-home *ngSwitchCase="0"></app-home>
         <app-about *ngSwitchCase="1"></app-about>
         <app-projects *ngSwitchCase="2"></app-projects>
@@ -51,6 +55,7 @@
       mat-icon-button
       (click)="openMenuDialog()"
       aria-label="Hamburger icon-button"
+      autofocus="false"
     >
       <mat-icon>reorder</mat-icon>
     </button>
