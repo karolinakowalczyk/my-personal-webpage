@@ -1,4 +1,6 @@
-# KarolaPersonalWebpage
+# Karola Personal Webpage
+
+I'm working on my personal webpage. It's in progress... :hammer:
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
 
