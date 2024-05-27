@@ -10,7 +10,7 @@
       [class.app__content--moved]="this.currentTabIndex !== 0"
     >
       <h1
-        class="app--full-name"
+        class="headline-1 app--full-name"
         [class.app--full-name-moved]="this.currentTabIndex !== 0"
       >
         {{ fullName }}
@@ -60,4 +60,8 @@
       <mat-icon>reorder</mat-icon>
     </button>
   </div>
+  <footer class="app__footer">
+    Background image designed by
+    <a class="app__footer-link" [href]="freepikLink" target="_blank">Freepik</a>
+  </footer>
 </div>

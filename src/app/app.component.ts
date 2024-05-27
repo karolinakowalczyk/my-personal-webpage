@@ -24,6 +24,8 @@ export class AppComponent {
   position = 'below' as MatTabHeaderPosition;
   fullName = 'Name surname';
 
+  readonly freepikLink = 'www.freepik.com/';
+
   constructor(public dialog: MatDialog) {}
 
   tabChanged($event: number): void {

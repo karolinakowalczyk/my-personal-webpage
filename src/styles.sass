@@ -12,4 +12,30 @@ body
   height: 100%
   font-family: 'Poppins', sans-serif
   color: $text
-  background-color: $background
+  background-color: transparent
+
+  &::before
+    content: ""
+    position: fixed
+    background: $background url('./assets/img/still-life-books-versus-technology.jpg') top right no-repeat
+    background-size: cover
+    left: 0
+    right: 0
+    top: 0
+    height: 100vh
+    z-index: -1
+
+.headline-2
+  font-size: $font-size-sm
+  font-weight: $font-weight-medium
+  line-height: $line-height-xs
+
+.headline-3
+  font-size: $font-size-md--bigger
+  font-weight: $font-weight-bold
+  line-height: $line-height-sm
+
+.section-title
+  font-size: $font-size-lg
+  font-weight: $font-weight-bold
+  line-height: $line-height-md

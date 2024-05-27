@@ -16,11 +16,15 @@
         @media (min-width: $tablet-width)
             margin: 0 auto
             padding: 0 16px
-            width: 80%
+            width: 90%
         @media (min-width: $desktop-width)
             flex-direction: row
             justify-content: flex-start
             align-items: stretch
+            width: 100%
+            max-width: 1140px
+        @media (min-width: $large-screen-width)
+            max-width: 1320px
 
     .app__hamburger-button
         position: absolute
@@ -112,6 +116,18 @@
     .app__mobile-content--moved
         margin-top: 4rem
         padding-bottom: 0
+
+    .app__footer
+        width: 100%
+        position: fixed
+        bottom: 0px
+        left: 0
+        text-align: center
+        padding-bottom: 16px
+
+        .app__footer-link
+            text-decoration: none
+            color: $primary
 
 .app--moved
     align-items: flex-start
