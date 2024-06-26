@@ -19,12 +19,10 @@ const fadeIn = trigger('fadeIn', [enterTransition]);
   animations: [fadeIn],
 })
 export class AppComponent {
-  @ViewChild('appContainer') appContainer: HTMLElement;
+  @ViewChild('appContent') appContent: HTMLElement;
   currentTabIndex = 0;
   position = 'below' as MatTabHeaderPosition;
   fullName = 'Name surname';
-
-  readonly freepikLink = 'www.freepik.com/';
 
   constructor(public dialog: MatDialog) {}
 

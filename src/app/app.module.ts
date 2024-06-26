@@ -16,6 +16,7 @@ import { MenuDialogComponent } from './components/menu-dialog/menu-dialog.compon
 import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AppRoutingModule } from './app-routing.module';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AppRoutingModule } from './app-routing.module';
     ProjectsComponent,
     ContactComponent,
     MenuDialogComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

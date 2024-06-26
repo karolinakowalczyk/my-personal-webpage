@@ -3,11 +3,11 @@
     @fadeIn
     class="app__container"
     [class.app__container--content]="this.currentTabIndex !== 0"
-    #appContainer
   >
     <div
       class="app__content"
       [class.app__content--moved]="this.currentTabIndex !== 0"
+      #appContent
     >
       <h1
         class="headline-1 app--full-name"
@@ -60,8 +60,5 @@
       <mat-icon>reorder</mat-icon>
     </button>
   </div>
-  <footer class="app__footer">
-    Background image designed by
-    <a class="app__footer-link" [href]="freepikLink" target="_blank">Freepik</a>
-  </footer>
+  <app-footer [content]="appContent"></app-footer>
 </div>
