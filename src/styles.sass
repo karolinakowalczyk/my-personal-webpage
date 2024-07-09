@@ -13,6 +13,7 @@ body
   font-family: 'Open Sans', sans-serif
   color: $text
   background-color: transparent
+  position: relative
 
   &::before
     content: ""
@@ -22,7 +23,7 @@ body
     left: 0
     right: 0
     top: 0
-    height: 100vh
+    bottom: 0
     z-index: -1
 
 h1
@@ -43,3 +44,9 @@ h1
   font-size: $font-size-lg
   font-weight: $font-weight-bold
   line-height: $line-height-md
+
+.italic-text
+  font-style: italic
+
+.primary-text
+  color: $primary

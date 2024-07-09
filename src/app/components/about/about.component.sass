@@ -2,29 +2,51 @@
 .app-about
     background-color: rgba($background, 0.5)
     margin: 16px 0 45px 0
+    position: relative
+    z-index: 1
 
     .app-about__container
         padding: 24px
 
     .app-about--main
-        display: grid
-        grid-template-columns: 1fr 3fr
-        grid-template-rows: 1fr
-        grid-column-gap: 2rem
+
+        @media (min-width: $big-tablet-width)
+            display: grid
+            grid-template-columns: 1fr 3fr
+            grid-template-rows: 1fr
+            grid-column-gap: 2rem
 
     .app-about--skills
-        gap: 32px
+
+        @media (min-width: $big-tablet-width)
+            gap: 32px
 
     .app-about--list-container
-        display: flex
+            display: flex
+            flex-direction: column 
+
+            @media (min-width: $big-tablet-width)
+                flex-direction: row 
 
     .app-about--list-column
-        flex-basis: 50%
+        flex-basis: 100%
+        padding: 0
+
+        @media (min-width: $big-tablet-width)
+            flex-basis: 50%
+            padding: 8px 0
 
     .app-about--list-small-column
-        flex-basis: 25%
+
+        @media (min-width: $big-tablet-width)
+            flex-basis: 25%
 
     .app-about--personal-image-container
+        display: flex
+        justify-content: center
+
+        @media (min-width: $big-tablet-width)
+            display: block
 
         .app-about__personal-image
             max-width: 100%
@@ -34,18 +56,22 @@
         .app-about--main-title
             padding-bottom: 16px
 
-            .app-about--main-title-header
-                color: $grey
-                letter-spacing: 2px
-                &::after
-                    content: ""
-                    width: 120px
-                    height: 1px
-                    display: inline-block
-                    background: $primary
-                    margin: 4px 10px
-
         .app-about--main-info
             display: flex
             flex-direction: column
+            margin-top: 24px
             gap: 8px
+
+            @media (min-width: $big-tablet-width)
+                margin-top: 0
+
+    .app-about--header
+        color: $grey
+        letter-spacing: 2px
+        &::after
+            content: ""
+            width: 120px
+            height: 1px
+            display: inline-block
+            background: $primary
+            margin: 4px 10px
