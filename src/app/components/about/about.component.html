@@ -1,7 +1,7 @@
-<div class="app-about">
+<div class="app-about" [ngClass]="startAnimation">
   <div class="app-about--main-container app-about__container">
     <div class="app-about--main-title">
-      <h2 class="headline-2 app-about--main-title-header">
+      <h2 class="headline-2 app-about--header">
         {{ "About" | uppercase }}
       </h2>
       <p class="section-title">
@@ -13,8 +13,8 @@
         <img class="app-about__personal-image" src="../assets/img/profile-picture.jpg" alt="profile image" />
       </div>
       <div class="app-about--main-info">
-        <h3 class="headline-3">Frontend Developer</h3>
-        <p>Specialized in frameworks: Angular & React</p>
+        <h3 class="headline-3 primary-text">Frontend Developer</h3>
+        <p class="italic-text">Specialized in frameworks: Angular & React</p>
         <div class="app-about--list-container">
           <mat-list role="list" class="app-about--list-column">
             <mat-list-item role="listitem">
@@ -66,119 +66,128 @@
   </div>
   <div class="app-about--skills-container app-about__container">
     <div class="app-about--skills-title">
-      <h2>Skills</h2>
+      <h2 class="headline-2 app-about--header">
+        {{ "Skills" | uppercase }}
+      </h2>
     </div>
-  </div>
-  <div class="app-about--skills app-about--list-container app-about__container">
-    <div class="app-about--list-column">
-      <span>Angular</span>
-      <mat-progress-bar mode="determinate" value="90"></mat-progress-bar>
-      <span>React</span>
-      <mat-progress-bar mode="determinate" value="90"></mat-progress-bar>
-      <span>Vue</span>
-      <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
-    </div>
-    <div class="app-about--list-column">
-      <span>Angular</span>
-      <mat-progress-bar mode="determinate" value="90"></mat-progress-bar>
-      <span>React</span>
-      <mat-progress-bar mode="determinate" value="90"></mat-progress-bar>
-      <span>Vue</span>
-      <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
+
+    <div class="app-about--skills app-about--list-container">
+      <div class="app-about--list-column">
+        <span>Angular</span>
+        <mat-progress-bar mode="determinate" value="90"></mat-progress-bar>
+        <span>React</span>
+        <mat-progress-bar mode="determinate" value="90"></mat-progress-bar>
+        <span>Vue</span>
+        <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
+      </div>
+      <div class="app-about--list-column">
+        <span>Angular</span>
+        <mat-progress-bar mode="determinate" value="90"></mat-progress-bar>
+        <span>React</span>
+        <mat-progress-bar mode="determinate" value="90"></mat-progress-bar>
+        <span>Vue</span>
+        <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
+      </div>
     </div>
   </div>
   <div class="app-about--courses-container app-about__container">
     <div class="app-about--courses-title">
-      <h2>Courses & Projects</h2>
+      <h2 class="headline-2 app-about--header">
+        {{ "Courses & Projects" | uppercase }}
+      </h2>
     </div>
-  </div>
-  <div class="app-about--courses app-about--list-container">
-    <mat-list role="list" class="app-about--list-small-column">
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>chevron_right</mat-icon>
-        <h3 matListItemTitle>Item 1</h3>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>chevron_right</mat-icon>
-        <h3 matListItemTitle>Item 2</h3>
-      </mat-list-item>
-    </mat-list>
-    <mat-list role="list" class="app-about--list-small-column">
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>chevron_right</mat-icon>
-        <h3 matListItemTitle>Item 1</h3>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>chevron_right</mat-icon>
-        <h3 matListItemTitle>Item 2</h3>
-      </mat-list-item>
-    </mat-list>
-    <mat-list role="list" class="app-about--list-small-column">
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>chevron_right</mat-icon>
-        <h3 matListItemTitle>Item 1</h3>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>chevron_right</mat-icon>
-        <h3 matListItemTitle>Item 2</h3>
-      </mat-list-item>
-    </mat-list>
-    <mat-list role="list" class="app-about--list-small-column">
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>chevron_right</mat-icon>
-        <h3 matListItemTitle>Item 1</h3>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>chevron_right</mat-icon>
-        <h3 matListItemTitle>Item 2</h3>
-      </mat-list-item>
-    </mat-list>
+
+    <div class="app-about--courses app-about--list-container">
+      <mat-list role="list" class="app-about--list-small-column">
+        <mat-list-item role="listitem">
+          <mat-icon matListItemIcon>chevron_right</mat-icon>
+          <h3 matListItemTitle>Item 1</h3>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon matListItemIcon>chevron_right</mat-icon>
+          <h3 matListItemTitle>Item 2</h3>
+        </mat-list-item>
+      </mat-list>
+      <mat-list role="list" class="app-about--list-small-column">
+        <mat-list-item role="listitem">
+          <mat-icon matListItemIcon>chevron_right</mat-icon>
+          <h3 matListItemTitle>Item 1</h3>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon matListItemIcon>chevron_right</mat-icon>
+          <h3 matListItemTitle>Item 2</h3>
+        </mat-list-item>
+      </mat-list>
+      <mat-list role="list" class="app-about--list-small-column">
+        <mat-list-item role="listitem">
+          <mat-icon matListItemIcon>chevron_right</mat-icon>
+          <h3 matListItemTitle>Item 1</h3>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon matListItemIcon>chevron_right</mat-icon>
+          <h3 matListItemTitle>Item 2</h3>
+        </mat-list-item>
+      </mat-list>
+      <mat-list role="list" class="app-about--list-small-column">
+        <mat-list-item role="listitem">
+          <mat-icon matListItemIcon>chevron_right</mat-icon>
+          <h3 matListItemTitle>Item 1</h3>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon matListItemIcon>chevron_right</mat-icon>
+          <h3 matListItemTitle>Item 2</h3>
+        </mat-list-item>
+      </mat-list>
+    </div>
   </div>
   <div class="app-about--interests-container app-about__container">
     <div class="app-about--interests-title">
-      <h2>Interests</h2>
+      <h2 class="headline-2 app-about--header">
+        {{ "Interests" | uppercase }}
+      </h2>
     </div>
-  </div>
-  <div class="app-about--interests app-about--list-container">
-    <mat-list role="list" class="app-about--list-small-column">
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>chevron_right</mat-icon>
-        <h3 matListItemTitle>Item 1</h3>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>chevron_right</mat-icon>
-        <h3 matListItemTitle>Item 2</h3>
-      </mat-list-item>
-    </mat-list>
-    <mat-list role="list" class="app-about--list-small-column">
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>chevron_right</mat-icon>
-        <h3 matListItemTitle>Item 1</h3>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>chevron_right</mat-icon>
-        <h3 matListItemTitle>Item 2</h3>
-      </mat-list-item>
-    </mat-list>
-    <mat-list role="list" class="app-about--list-small-column">
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>chevron_right</mat-icon>
-        <h3 matListItemTitle>Item 1</h3>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>chevron_right</mat-icon>
-        <h3 matListItemTitle>Item 2</h3>
-      </mat-list-item>
-    </mat-list>
-    <mat-list role="list" class="app-about--list-small-column">
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>chevron_right</mat-icon>
-        <h3 matListItemTitle>Item 1</h3>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon>chevron_right</mat-icon>
-        <h3 matListItemTitle>Item 2</h3>
-      </mat-list-item>
-    </mat-list>
+
+    <div class="app-about--interests app-about--list-container">
+      <mat-list role="list" class="app-about--list-small-column">
+        <mat-list-item role="listitem">
+          <mat-icon matListItemIcon>chevron_right</mat-icon>
+          <h3 matListItemTitle>Item 1</h3>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon matListItemIcon>chevron_right</mat-icon>
+          <h3 matListItemTitle>Item 2</h3>
+        </mat-list-item>
+      </mat-list>
+      <mat-list role="list" class="app-about--list-small-column">
+        <mat-list-item role="listitem">
+          <mat-icon matListItemIcon>chevron_right</mat-icon>
+          <h3 matListItemTitle>Item 1</h3>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon matListItemIcon>chevron_right</mat-icon>
+          <h3 matListItemTitle>Item 2</h3>
+        </mat-list-item>
+      </mat-list>
+      <mat-list role="list" class="app-about--list-small-column">
+        <mat-list-item role="listitem">
+          <mat-icon matListItemIcon>chevron_right</mat-icon>
+          <h3 matListItemTitle>Item 1</h3>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon matListItemIcon>chevron_right</mat-icon>
+          <h3 matListItemTitle>Item 2</h3>
+        </mat-list-item>
+      </mat-list>
+      <mat-list role="list" class="app-about--list-small-column">
+        <mat-list-item role="listitem">
+          <mat-icon matListItemIcon>chevron_right</mat-icon>
+          <h3 matListItemTitle>Item 1</h3>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon matListItemIcon>chevron_right</mat-icon>
+          <h3 matListItemTitle>Item 2</h3>
+        </mat-list-item>
+      </mat-list>
+    </div>
   </div>
 </div>
