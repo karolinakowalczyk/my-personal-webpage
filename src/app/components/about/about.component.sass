@@ -1,10 +1,11 @@
 @import '../../../_colors.sass'
+
 .app-about
     background-color: rgba($background, 0.5)
-    margin: 16px 0 45px 0
+    margin: 16px 0
     position: relative
     z-index: 1
-
+    
     .app-about__container
         padding: 24px
 
@@ -37,9 +38,13 @@
             padding: 8px 0
 
     .app-about--list-small-column
+        flex-basis: 100%
+        padding: 0
 
         @media (min-width: $big-tablet-width)
             flex-basis: 25%
+            padding: 8px 0
+
 
     .app-about--personal-image-container
         display: flex
@@ -68,6 +73,7 @@
     .app-about--header
         color: $grey
         letter-spacing: 2px
+        margin-bottom: 16px
         &::after
             content: ""
             width: 120px

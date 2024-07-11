@@ -50,3 +50,15 @@ h1
 
 .primary-text
   color: $primary
+
+@keyframes smoothAppearance 
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+.start-animation
+  animation: smoothAppearance 1s ease-out
+  @media (min-width: $big-tablet-width)
+    animation: none
+
