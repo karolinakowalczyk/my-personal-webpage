@@ -17,6 +17,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './components/footer/footer.component';
+import { ProjectInfoComponent } from './components/projects/project-info/project-info.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ContactComponent,
     MenuDialogComponent,
     FooterComponent,
+    ProjectInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { FooterComponent } from './components/footer/footer.component';
     MatListModule,
     MatProgressBarModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

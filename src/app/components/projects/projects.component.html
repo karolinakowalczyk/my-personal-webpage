@@ -11,31 +11,17 @@
             my free time.</p>
     </div>
     <div class="app-projects__portfolio-container section-container">
-        <div class="app-projects__portfolio-item">
-            <img class="app-projects__portfolio-img app-projects__portfolio-img--only-desktop"
-                src="../../../assets/img/projects/zoo-app/zoo-app-home-desktop.png">
-            <img class="app-projects__portfolio-img app-projects__portfolio-img--only-mobile"
-                src="../../../assets/img/projects/zoo-app/zoo-app-home-mobile.png">
-        </div>
-
-        <div class="app-projects__portfolio-item">
-            <img class="app-projects__portfolio-img"
-                src="../../../assets/img/projects/travel-blog/travel-blog-home-desktop.png">
-        </div>
-
-        <div class="app-projects__portfolio-item">
-            <img class="app-projects__portfolio-img app-projects__portfolio-img--only-desktop"
-                src="../../../assets/img/projects/med-app/med-app-home-desktop.png">
-        </div>
-
-        <div class="app-projects__portfolio-item">
-            <img class="app-projects__portfolio-img" src="../../../assets/img/projects/info-vis/info-vis-1.png">
-        </div>
-
-
-        <div class="app-projects__portfolio-item">
-            <img class="app-projects__portfolio-img"
-                src="../../../assets/img/projects/work-breaks-app/work-breaks-app-1.png">
+        <div *ngFor="let project of projects" class="app-projects__portfolio-item">
+            <ng-container *ngIf="project.mobileImgSrc">
+                <img class="app-projects__portfolio-img app-projects__portfolio-img--only-desktop"
+                    [src]="project.imgSrc">
+                <img class="app-projects__portfolio-img app-projects__portfolio-img--only-mobile"
+                    [src]="project.mobileImgSrc">
+            </ng-container>
+            <ng-container *ngIf="!project.mobileImgSrc">
+                <img class="app-projects__portfolio-img" [src]="project.imgSrc">
+            </ng-container>
+            <app-project-info [text]="project.title"></app-project-info>
         </div>
     </div>
 </div>
