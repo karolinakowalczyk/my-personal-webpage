@@ -1,17 +1,16 @@
 <div mat-dialog-title class="project-info-dialog__title">
     <h2>Project information</h2>
-    <button mat-button mat-dialog-close><mat-icon>close</mat-icon></button>
+    <mat-dialog-actions class="app-menu-dialog--actions">
+        <button mat-icon-button mat-dialog-close>
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-dialog-actions>
 </div>
 <mat-dialog-content>
     <div class="project-info-dialog__content">
         <div class="project-info-dialog__slides">
-            <div class="project-info-dialog__slide"
-                [ngStyle]="{'background-image': 'url('+ data.project.slides[currentSlide] +')'}">
-
-            </div>
+            <app-image-slider [slides]="data.project.slides"></app-image-slider>
         </div>
-        <button (click)="nextSlide()">Next</button>
-        <button (click)="previousSlide()">Previous</button>
         <div class="project-info-dialog__description">
             <h4>{{data.project.id}}</h4>
         </div>
