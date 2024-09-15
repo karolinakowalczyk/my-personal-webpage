@@ -19,6 +19,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProjectInfoComponent } from './components/projects/project-info/project-info.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HobbyComponent } from './components/hobby/hobby.component';
+import { ProjectInfoDialogComponent } from './components/projects/project-info-dialog/project-info-dialog.component';
+import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import { HttpClientModule } from '@angular/common/http';
     MenuDialogComponent,
     FooterComponent,
     ProjectInfoComponent,
+    HobbyComponent,
+    ProjectInfoDialogComponent,
+    ImageSliderComponent,
   ],
   imports: [
     BrowserModule,

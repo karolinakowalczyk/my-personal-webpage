@@ -1,4 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject, inject, Input } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import { ProjectInfoDialogComponent } from '../project-info-dialog/project-info-dialog.component';
+import { Project } from 'src/app/interfaces/project';
 
 @Component({
   selector: 'app-project-info',
@@ -6,8 +9,18 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./project-info.component.sass'],
 })
 export class ProjectInfoComponent {
-  @Input() text: string;
+  @Input() project: Project;
+
+  constructor(private dialog: MatDialog) {}
+
   openProjectDialog() {
-    console.log('open dialog');
+    this.dialog.open(ProjectInfoDialogComponent, {
+      height: 'auto',
+      width: '80%',
+      autoFocus: false,
+      data: {
+        project: this.project,
+      },
+    });
   }
 }

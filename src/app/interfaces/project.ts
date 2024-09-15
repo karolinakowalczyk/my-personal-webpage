@@ -3,4 +3,6 @@ export interface Project {
   title: string;
   imgSrc: string;
   mobileImgSrc?: string;
+  techStack: string;
+  slides: string[];
 }

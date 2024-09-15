@@ -21,7 +21,7 @@
             <ng-container *ngIf="!project.mobileImgSrc">
                 <img class="app-projects__portfolio-img" [src]="project.imgSrc">
             </ng-container>
-            <app-project-info [text]="project.title"></app-project-info>
+            <app-project-info [project]="project"></app-project-info>
         </div>
     </div>
 </div>
