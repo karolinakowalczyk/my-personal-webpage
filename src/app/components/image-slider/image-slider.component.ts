@@ -16,7 +16,7 @@ export class ImageSliderComponent implements OnInit {
   ngOnInit(): void {
     setInterval(() => {
       this.nextSlide();
-    }, 3000);
+    }, 5000);
   }
 
   nextSlide() {
@@ -35,6 +35,6 @@ export class ImageSliderComponent implements OnInit {
     setTimeout(() => {
       this.currentSlide = index;
       this.hidden = false;
-    }, 200);
+    }, 500);
   }
 }

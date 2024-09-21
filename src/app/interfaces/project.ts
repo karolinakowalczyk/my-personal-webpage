@@ -5,4 +5,7 @@ export interface Project {
   mobileImgSrc?: string;
   techStack: string;
   slides: string[];
+  repoUrls: string[];
+  collaboration: boolean;
+  description: string;
 }

@@ -15,8 +15,6 @@ export class ProjectInfoComponent {
 
   openProjectDialog() {
     this.dialog.open(ProjectInfoDialogComponent, {
-      height: 'auto',
-      width: '80%',
       autoFocus: false,
       data: {
         project: this.project,

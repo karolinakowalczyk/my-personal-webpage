@@ -1,17 +1,71 @@
 @import '../../../../_colors.sass'
-    
+
+::ng-deep .cdk-overlay-pane
+  width: 100%
+  height: 100%
+  max-width: 100vw !important
+  max-height: 100vh
+
+  @media (min-width: $tablet-width)
+    width: 80%
+    height: auto
+
 .project-info-dialog__title
     display: flex
     justify-content: space-between
     align-items: center
 
 .project-info-dialog__content
-    display: flex
-    width: 100%
+    max-height: none
+    height: auto
 
-    .project-info-dialog__slides
-        width: calc((100%/3)*2)
-        height: 400px
+    .project-info-dialog__content-container
+        display: flex
+        flex-direction: column
+        gap: 16px
+        width: 100%
 
-    .project-info-dialog__description
-        width: calc(100%/3)
+        @media (min-width: $tablet-width)
+            flex-direction: row
+            gap: 0
+
+        .project-info-dialog__slides
+            height: 400px
+            width: 100%
+
+            @media (min-width: $tablet-width)
+                width: calc((100%/3)*2)
+
+        .project-info-dialog__description
+            width: 100%
+
+            @media (min-width: $tablet-width)
+                width: calc(100%/3)
+
+        .project-info-dialog__description
+            padding: 0 12px
+            word-wrap: break-word
+            line-height: normal
+
+            .project-info-dialog__description-main-info
+                padding: 24px
+                margin-bottom: 24px
+                background-color: rgba($primary, 0.5)
+                color: $white
+
+                .project-info-dialog__project-title
+                    padding-bottom: 20px
+                    margin-bottom: 20px
+                    border-bottom: 1px solid $primary
+
+                .project-info-dialog__description-text
+                    display: flex
+                    flex-direction: column
+                    gap: 8px
+
+                .project-info-dialog__link
+                    text-decoration: none
+                    color: $secondary
+
+                .project-info-dialog__text--bold
+                    font-weight: 700
