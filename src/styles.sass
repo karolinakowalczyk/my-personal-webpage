@@ -18,7 +18,7 @@ body
   &::before
     content: ""
     position: fixed
-    background: $background url('./assets/img/still-life-books-versus-technology.jpg') top right no-repeat
+    background: $background url('./assets/img/background.jpg') top right no-repeat
     background-size: cover
     left: 0
     right: 0
@@ -50,6 +50,27 @@ h1
 
 .primary-text
   color: $primary
+
+.section
+  background-color: rgba($background, 0.5)
+  margin: 16px 0
+  position: relative
+  z-index: 1
+
+.section-container
+  padding: 24px
+
+.section-header
+  color: $grey
+  letter-spacing: 2px
+  margin-bottom: 16px
+  &::after
+      content: ""
+      width: 120px
+      height: 1px
+      display: inline-block
+      background: $primary
+      margin: 4px 10px
 
 @keyframes smoothAppearance 
   from

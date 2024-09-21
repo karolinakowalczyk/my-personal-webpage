@@ -37,6 +37,7 @@ export class AppComponent {
     const mobileMenuDialog = this.dialog.open(MenuDialogComponent, {
       height: '100%',
       width: '100%',
+      maxWidth: '100vw',
       autoFocus: false,
       restoreFocus: false,
       data: {

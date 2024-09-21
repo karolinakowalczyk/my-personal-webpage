@@ -1,0 +1,58 @@
+@import '../../../_colors.sass'
+
+.app-projects
+    .app-projects__container
+        padding: 24px
+
+    .app-projects__portfolio-container
+        display: grid
+        gap: 16px
+        grid-template-columns: repeat(1, 1fr)
+
+        @media (min-width: $tablet-width)
+            grid-template-columns: repeat(2, 1fr)
+
+        @media (min-width: $big-tablet-width)
+            grid-template-columns: repeat(3, 1fr)
+
+
+    .app-projects__portfolio-item
+        display: flex
+        justify-content: center
+        align-items: center
+        overflow: hidden
+        position: relative
+        height: 351px
+
+        @media (min-width: $tablet-width)
+            height: 240px
+
+        @media (min-width: $big-tablet-width)
+            height: 213px
+
+        @media (min-width: $desktop-width)
+            height: 258px
+
+        @media (min-width: $large-screen-width)
+            height: 303px
+
+    .app-projects__portfolio-img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        transition: transform 0.3s ease-in-out
+
+    .app-projects__portfolio-img:hover
+        transform: scale(1.1)
+        cursor: pointer
+
+    .app-projects__portfolio-img--only-mobile
+        @media (min-width: $big-tablet-width)
+            display: none
+
+    .app-projects__portfolio-img--only-desktop
+        display: none
+        @media (min-width: $big-tablet-width)
+            display: block
+
+    

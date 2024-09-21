@@ -1,0 +1,49 @@
+@import '../../../_colors.sass'
+
+.image-slider
+    position: relative
+    width: 100%
+    height: 100%
+
+    .slide
+        weight: 100%
+        height: 100%
+        background-size: contain
+        background-position: center
+        background-repeat: no-repeat
+        transition: opacity 0.5s ease-in-out
+
+    .nextBtn, .prevBtn
+        position: absolute
+        top: 50%
+        background-color: $grey
+        color: $white
+
+    .nextBtn
+        right: 20px
+        
+    .prevBtn
+        left: 20px
+
+    #indicators
+        position: absolute
+        left: 0
+        right: 0
+        margin-inline: auto
+        width: fit-content
+        bottom: 20px
+        
+        .indicator
+            width: 20px
+            height: 20px
+            border-radius: 50%
+            background-color: $grey
+            display: inline-block
+            margin: 0
+            margin: 0 5px
+            cursor: pointer
+            transition: background-color 0.5s ease-in-out 
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+
+            &.active
+                background-color: $white

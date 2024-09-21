@@ -17,6 +17,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './components/footer/footer.component';
+import { ProjectInfoComponent } from './components/projects/project-info/project-info.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HobbyComponent } from './components/hobby/hobby.component';
+import { ProjectInfoDialogComponent } from './components/projects/project-info-dialog/project-info-dialog.component';
+import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +32,10 @@ import { FooterComponent } from './components/footer/footer.component';
     ContactComponent,
     MenuDialogComponent,
     FooterComponent,
+    ProjectInfoComponent,
+    HobbyComponent,
+    ProjectInfoDialogComponent,
+    ImageSliderComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +49,7 @@ import { FooterComponent } from './components/footer/footer.component';
     MatListModule,
     MatProgressBarModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

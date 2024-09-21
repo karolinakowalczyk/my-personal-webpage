@@ -9,7 +9,8 @@
         <app-home *ngSwitchCase="0"></app-home>
         <app-about *ngSwitchCase="1"></app-about>
         <app-projects *ngSwitchCase="2"></app-projects>
-        <app-contact *ngSwitchCase="3"></app-contact>
+        <app-hobby *ngSwitchCase="3"></app-hobby>
+        <app-contact *ngSwitchCase="4"></app-contact>
       </div>
 
       <mat-tab-group class="app__mat-tab-group" [class.app__mat-tab-group--moved]="this.currentTabIndex !== 0"
@@ -17,6 +18,7 @@
         <mat-tab label="Home"><app-home></app-home></mat-tab>
         <mat-tab label="About"><app-about></app-about></mat-tab>
         <mat-tab label="Projects"><app-projects></app-projects></mat-tab>
+        <mat-tab label="Hobby"><app-hobby></app-hobby></mat-tab>
         <mat-tab label="Contact"><app-contact></app-contact></mat-tab>
       </mat-tab-group>
     </div>

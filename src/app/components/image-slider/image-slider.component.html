@@ -1,0 +1,12 @@
+<div class="image-slider">
+    <div class="slide" [ngStyle]="{'background-image': 'url('+ slides[currentSlide] +')', opacity: hidden ? 0 : 1}">
+    </div>
+    <div id="indicators">
+        <div class="indicator" *ngFor="let slide of slides; let i=index" [class.active]="i === currentSlide"
+            (click)="selectSlide(i)">
+
+        </div>
+    </div>
+    <button mat-icon-button (click)="nextSlide()" class="nextBtn"><mat-icon>chevron_right</mat-icon></button>
+    <button mat-icon-button (click)="previousSlide()" class="prevBtn"><mat-icon>chevron_left</mat-icon></button>
+</div>

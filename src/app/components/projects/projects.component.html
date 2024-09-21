@@ -1,1 +1,27 @@
-<p>projects works!</p>
+<div class="app-projects section" [ngClass]="startAnimation">
+    <div class="section-container">
+        <h2 class="headline-2 section-header">
+            {{ "Portfolio" | uppercase }}
+        </h2>
+        <p class="section-title">
+            {{ "My web projects" | uppercase }}
+        </p>
+        <p class="italic-text">There are no commercial projects; they were created either independently or with
+            collaborators during my studies or in
+            my free time.</p>
+    </div>
+    <div class="app-projects__portfolio-container section-container">
+        <div *ngFor="let project of projects" class="app-projects__portfolio-item">
+            <ng-container *ngIf="project.mobileImgSrc">
+                <img class="app-projects__portfolio-img app-projects__portfolio-img--only-desktop"
+                    [src]="project.imgSrc">
+                <img class="app-projects__portfolio-img app-projects__portfolio-img--only-mobile"
+                    [src]="project.mobileImgSrc">
+            </ng-container>
+            <ng-container *ngIf="!project.mobileImgSrc">
+                <img class="app-projects__portfolio-img" [src]="project.imgSrc">
+            </ng-container>
+            <app-project-info [project]="project"></app-project-info>
+        </div>
+    </div>
+</div>

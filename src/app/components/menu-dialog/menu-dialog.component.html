@@ -1,23 +1,16 @@
 <div class="app-menu-dialog">
   <mat-dialog-actions class="app-menu-dialog--actions">
-    <button
-      mat-icon-button
-      mat-dialog-close
-      class="app-menu-dialog--actions-close-btn"
-    >
+    <button mat-icon-button mat-dialog-close class="app-menu-dialog--actions-close-btn">
       <mat-icon>close</mat-icon>
     </button>
   </mat-dialog-actions>
   <mat-dialog-content class="mat-typography">
     <div class="app-menu-dialog--content">
-      <mat-tab-group
-        class="vertical"
-        [selectedIndex]="data.activeTab"
-        (selectedIndexChange)="mobileTabChanged($event)"
-      >
+      <mat-tab-group class="vertical" [selectedIndex]="data.activeTab" (selectedIndexChange)="mobileTabChanged($event)">
         <mat-tab label="Home"></mat-tab>
         <mat-tab label="About"></mat-tab>
         <mat-tab label="Projects"></mat-tab>
+        <mat-tab label="Hobby"></mat-tab>
         <mat-tab label="Contact"></mat-tab>
       </mat-tab-group>
     </div>
