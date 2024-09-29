@@ -1,0 +1,34 @@
+@import '../../../_colors.sass'
+
+.app-contact
+
+    .app-contact__info
+        display: flex
+        width: 100%
+
+        .app-contact__info-container
+            display: flex
+            gap: 16px
+            width: 100%
+
+            @media (min-width: $tablet-width)
+                width: 50%
+
+            .app-contact__icon-container
+                width: 56px
+                height: 56px
+                border-radius: 50%
+                font-size: 24px
+                display: flex
+                justify-content: center
+                align-content: center
+                flex-wrap: wrap
+                background-color: $primary
+
+            .app-contact__text-container
+                display: flex
+                flex-direction: column
+                gap: 2px
+
+                .app-contact__socials
+                    display: flex

@@ -1,27 +1,28 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import { ProjectsComponent } from './components/projects/projects.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MenuDialogComponent } from './components/menu-dialog/menu-dialog.component';
+import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ProjectInfoComponent } from './components/projects/project-info/project-info.component';
-import { HttpClientModule } from '@angular/common/http';
 import { HobbyComponent } from './components/hobby/hobby.component';
-import { ProjectInfoDialogComponent } from './components/projects/project-info-dialog/project-info-dialog.component';
+import { HomeComponent } from './components/home/home.component';
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
+import { MenuDialogComponent } from './components/menu-dialog/menu-dialog.component';
+import { ProjectInfoDialogComponent } from './components/projects/project-info-dialog/project-info-dialog.component';
+import { ProjectInfoComponent } from './components/projects/project-info/project-info.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { ImageSliderComponent } from './components/image-slider/image-slider.com
     MatProgressBarModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
