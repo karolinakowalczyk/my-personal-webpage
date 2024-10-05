@@ -38,5 +38,32 @@
                 </div>
             </div>
         </div>
+        <form [formGroup]="emailForm" (ngSubmit)="sendEmail()" class="app-contact__form">
+            <div class="app-contact__form-row">
+                <mat-form-field class="app-contact__form-field">
+                    <mat-label>Your Name</mat-label>
+                    <input matInput type="text" formControlName="fromName">
+                    <mat-error *ngIf="emailForm.controls['fromName'].errors?.['required']" class="app-contact__error">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="warning"></mat-icon>
+                        Please
+                        fill out this field.
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="app-contact__form-field">
+                    <mat-label>Your Email</mat-label>
+                    <input matInput type="emial" formControlName="fromEmail">
+                </mat-form-field>
+            </div>
+            <mat-form-field class="app-contact__form-field">
+                <mat-label>Subject</mat-label>
+                <input matInput type="text" formControlName="subject">
+            </mat-form-field>
+            <mat-form-field class="app-contact__form-field">
+                <mat-label>Message</mat-label>
+                <textarea matInput rows="5" formControlName="message"></textarea>
+            </mat-form-field>
+            <button type="submit" mat-flat-button class="app-contact__form-btn" [disabled]="isSending">Send
+                message</button>
+        </form>
     </div>
 </div>

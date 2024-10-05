@@ -4,14 +4,20 @@
 
     .app-contact__info
         display: flex
+        flex-direction: column
+        gap: 24px
         width: 100%
+        margin-bottom: 36px
+
+        @media (min-width: $big-tablet-width)
+            flex-direction: row
 
         .app-contact__info-container
             display: flex
             gap: 16px
             width: 100%
 
-            @media (min-width: $tablet-width)
+            @media (min-width: $big-tablet-width)
                 width: 50%
 
             .app-contact__icon-container
@@ -32,3 +38,28 @@
 
                 .app-contact__socials
                     display: flex
+                    gap:  8px
+
+    .app-contact__form
+        display: flex
+        flex-direction: column
+
+        .app-contact__form-row
+            display: flex
+            flex-direction: column
+            
+            @media (min-width: $tablet-width)
+                flex-direction: row
+                gap: 24px
+
+        .app-contact__form-field
+            width: 100%
+
+        .app-contact__form-btn
+            background-color: $primary
+            font-size: 16px
+            align-self: center
+
+        .app-contact__error
+            display: flex-basis
+            justify-content: center

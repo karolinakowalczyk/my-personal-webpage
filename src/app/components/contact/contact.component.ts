@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import emailjs from '@emailjs/browser';
+import { emailJsData } from 'src/app/data/emailjsdata';
 
 @Component({
   selector: 'app-contact',
@@ -17,20 +18,23 @@ export class ContactComponent implements OnInit {
 
   myEmail = 'karolinakowalczyk1999@gmail.com';
 
-  form: FormGroup = this.fb.group({
-    from_name: new FormControl('', [Validators.required]),
-    // to_name: 'Me',
-    from_email: new FormControl('', [Validators.required, Validators.email]),
+  myName = 'Karolina';
+
+  isSending: boolean = false;
+
+  emailForm: FormGroup = this.fb.group({
+    fromName: new FormControl('', [Validators.required]),
+    fromEmail: new FormControl('', [Validators.required, Validators.email]),
     subject: new FormControl('', [Validators.required]),
     message: new FormControl('', [Validators.required]),
   });
 
-  private readonly templateParams = {
-    to_name: 'Karolina',
-    from_name: 'Test Person',
-    from_email: 'test@gmail.com',
-    subject: 'Test Subject',
-    message: 'This is test message',
+  private templateParams = {
+    to_name: this.myName,
+    from_name: this.emailForm.value.fromName,
+    from_email: this.emailForm.value.fromEmail,
+    subject: this.emailForm.value.subject,
+    message: this.emailForm.value.message,
   };
 
   constructor(private fb: FormBuilder) {}
@@ -39,28 +43,45 @@ export class ContactComponent implements OnInit {
     this.startAnimation = 'start-animation';
   }
 
-  sendEmail() {
-    // emailjs.send('service_b7cmyym', 'template_i8dud5l', {
-    //   to_name: 'Karolina',
-    //   from_name: 'Test Person',
-    //   from_email: 'test@gmail.com',
-    //   subject: 'Test Subject',
-    //   message: 'This is test message',
-    // });
+  assignCurrentFormValuesToTemplateParams() {
+    this.templateParams = {
+      to_name: this.myName,
+      from_name: this.emailForm.value.fromName,
+      from_email: this.emailForm.value.fromEmail,
+      subject: this.emailForm.value.subject,
+      message: this.emailForm.value.message,
+    };
+  }
 
-    emailjs
-      .send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this.templateParams, {
-        publicKey: 'YOUR_PUBLIC_KEY',
-      })
-      .then(
-        (response) => {
-          //show success toast
-          console.log('SUCCESS!', response.status, response.text);
-        },
-        (err) => {
-          //show error toast
-          console.log('FAILED...', err);
-        }
-      );
+  sendEmail() {
+    if (this.emailForm.valid) {
+      this.assignCurrentFormValuesToTemplateParams();
+      this.isSending = true;
+      emailjs
+        .send(
+          emailJsData.serviceId,
+          emailJsData.templateId,
+          this.templateParams,
+          {
+            publicKey: emailJsData.publicKey,
+          }
+        )
+        .then(
+          (response) => {
+            //show success toast
+            console.log('SUCCESS!', response.status, response.text);
+            this.emailForm.reset();
+            Object.keys(this.emailForm.controls).forEach((key) => {
+              this.emailForm.controls[key].setErrors(null);
+            });
+            this.isSending = false;
+          },
+          (err) => {
+            //show error toast
+            console.log('FAILED...', err);
+            this.isSending = false;
+          }
+        );
+    }
   }
 }

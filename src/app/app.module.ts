@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -23,6 +25,7 @@ import { MenuDialogComponent } from './components/menu-dialog/menu-dialog.compon
 import { ProjectInfoDialogComponent } from './components/projects/project-info-dialog/project-info-dialog.component';
 import { ProjectInfoComponent } from './components/projects/project-info/project-info.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { FormValidationDirective } from './directives/form-validation.directive';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
     HobbyComponent,
     ProjectInfoDialogComponent,
     ImageSliderComponent,
+    FormValidationDirective,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +53,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
     MatDialogModule,
     MatListModule,
     MatProgressBarModule,
+    MatInputModule,
+    MatFormFieldModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
