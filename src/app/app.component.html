@@ -13,8 +13,9 @@
         <app-contact *ngSwitchCase="4"></app-contact>
       </div>
 
-      <mat-tab-group class="app__mat-tab-group" [class.app__mat-tab-group--moved]="this.currentTabIndex !== 0"
-        [headerPosition]="position" [(selectedIndex)]="currentTabIndex" (selectedIndexChange)="tabChanged($event)">
+      <mat-tab-group animationDuration="0ms" class="app__mat-tab-group"
+        [class.app__mat-tab-group--moved]="this.currentTabIndex !== 0" [headerPosition]="position"
+        [(selectedIndex)]="currentTabIndex" (selectedIndexChange)="tabChanged($event)">
         <mat-tab label="Home"><app-home></app-home></mat-tab>
         <mat-tab label="About"><app-about></app-about></mat-tab>
         <mat-tab label="Projects"><app-projects></app-projects></mat-tab>
@@ -25,7 +26,8 @@
     <div [ngClass]="
         this.currentTabIndex === 0 ? 'app__main-photo' : 'app__no-photo'
       ">
-      <img class="app__main-photo--image" src="../assets/img/profile-picture.jpg" alt="profile image" />
+      <img class="app__main-photo--image" src="../assets/img/profile-picture-optimized-medium-size.jpg"
+        alt="profile image" />
     </div>
     <button class="app__hamburger-button" mat-icon-button (click)="openMenuDialog()" aria-label="Hamburger icon-button">
       <mat-icon>reorder</mat-icon>

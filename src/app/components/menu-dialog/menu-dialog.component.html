@@ -6,7 +6,8 @@
   </mat-dialog-actions>
   <mat-dialog-content class="mat-typography">
     <div class="app-menu-dialog--content">
-      <mat-tab-group class="vertical" [selectedIndex]="data.activeTab" (selectedIndexChange)="mobileTabChanged($event)">
+      <mat-tab-group animationDuration="0ms" class="vertical" [selectedIndex]="data.activeTab"
+        (selectedIndexChange)="mobileTabChanged($event)">
         <mat-tab label="Home"></mat-tab>
         <mat-tab label="About"></mat-tab>
         <mat-tab label="Projects"></mat-tab>

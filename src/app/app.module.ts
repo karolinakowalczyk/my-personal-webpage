@@ -13,7 +13,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -55,7 +54,6 @@ import { ValidationErrorMessagePipe } from './pipes/validation-error-message.pip
     MatProgressBarModule,
     MatInputModule,
     MatFormFieldModule,
-    AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
   ],
