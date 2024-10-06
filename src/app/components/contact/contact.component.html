@@ -1,1 +1,80 @@
-<p>contact works!</p>
+<div class="app-projects section app-contact" [ngClass]="startAnimation">
+    <div class="section-container">
+        <h2 class="headline-2 section-header">
+            {{ "Contact" | uppercase }}
+        </h2>
+        <p class="section-title">
+            {{ "Get in touch" | uppercase }}
+        </p>
+        <div class="app-contact__info">
+            <div class="app-contact__info-container">
+                <div class="app-contact__icon-container">
+                    <mat-icon>email</mat-icon>
+                </div>
+                <div class="app-contact__text-container">
+                    <h4 class="headline-4">Email Me</h4>
+                    <p>{{myEmail}}</p>
+                </div>
+            </div>
+            <div class="app-contact__info-container">
+                <div class="app-contact__icon-container">
+                    <mat-icon>
+                        share
+                    </mat-icon>
+                </div>
+                <div class="app-contact__text-container">
+                    <h4 class="headline-4">Social Profiles</h4>
+                    <div class="app-contact__socials">
+                        <a href="https://www.linkedin.com/in/karolina-kowalczyk99/" target="_blank">
+                            <img alt="linkedin-icon" src="../../../assets/icons/icons8-linkedin-30.png">
+                        </a>
+                        <a target="_blank">
+                            <img alt="instagram-icon" src="../../../assets/icons/icons8-instagram-30.png">
+                        </a>
+                        <a href="https://github.com/karolinakowalczyk" target="_blank">
+                            <img alt="github-icon" src="../../../assets/icons/icons8-github-30.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form [formGroup]="emailForm" (ngSubmit)="sendEmail()" class="app-contact__form" #emailFormDirective="ngForm">
+            <div class="app-contact__form-row">
+                <mat-form-field class="app-contact__form-field">
+                    <mat-label>Your Name</mat-label>
+                    <input matInput type="text" formControlName="fromName">
+                    <mat-error>
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="warning"></mat-icon>
+                        {{ emailForm.get('fromName')?.errors | validationErrorMessage }}
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="app-contact__form-field">
+                    <mat-label>Your Email</mat-label>
+                    <input matInput type="email" formControlName="fromEmail">
+                    <mat-error>
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="warning"></mat-icon>
+                        {{ emailForm.get('fromEmail')?.errors | validationErrorMessage }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <mat-form-field class="app-contact__form-field">
+                <mat-label>Subject</mat-label>
+                <input matInput type="text" formControlName="subject">
+                <mat-error>
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="warning"></mat-icon>
+                    {{ emailForm.get('subject')?.errors | validationErrorMessage }}
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="app-contact__form-field">
+                <mat-label>Message</mat-label>
+                <textarea matInput rows="5" formControlName="message"></textarea>
+                <mat-error>
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="warning"></mat-icon>
+                    {{ emailForm.get('message')?.errors | validationErrorMessage }}
+                </mat-error>
+            </mat-form-field>
+            <button type="submit" mat-flat-button class="app-contact__form-btn" [disabled]="isSending">Send
+                message</button>
+        </form>
+    </div>
+</div>
