@@ -25,7 +25,7 @@ import { MenuDialogComponent } from './components/menu-dialog/menu-dialog.compon
 import { ProjectInfoDialogComponent } from './components/projects/project-info-dialog/project-info-dialog.component';
 import { ProjectInfoComponent } from './components/projects/project-info/project-info.component';
 import { ProjectsComponent } from './components/projects/projects.component';
-import { FormValidationDirective } from './directives/form-validation.directive';
+import { ValidationErrorMessagePipe } from './pipes/validation-error-message.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,7 @@ import { FormValidationDirective } from './directives/form-validation.directive'
     HobbyComponent,
     ProjectInfoDialogComponent,
     ImageSliderComponent,
-    FormValidationDirective,
+    ValidationErrorMessagePipe,
   ],
   imports: [
     BrowserModule,

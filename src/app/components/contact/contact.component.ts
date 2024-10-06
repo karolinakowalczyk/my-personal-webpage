@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
   FormGroup,
+  FormGroupDirective,
   Validators,
 } from '@angular/forms';
 import emailjs from '@emailjs/browser';
@@ -14,13 +15,15 @@ import { emailJsData } from 'src/app/data/emailjsdata';
   styleUrls: ['./contact.component.sass'],
 })
 export class ContactComponent implements OnInit {
+  @ViewChild('emailFormDirective') emailFormDirective: FormGroupDirective;
+
   startAnimation = '';
 
   myEmail = 'karolinakowalczyk1999@gmail.com';
 
   myName = 'Karolina';
 
-  isSending: boolean = false;
+  protected isSending: boolean = false;
 
   emailForm: FormGroup = this.fb.group({
     fromName: new FormControl('', [Validators.required]),
@@ -70,10 +73,8 @@ export class ContactComponent implements OnInit {
           (response) => {
             //show success toast
             console.log('SUCCESS!', response.status, response.text);
+            this.emailFormDirective.resetForm();
             this.emailForm.reset();
-            Object.keys(this.emailForm.controls).forEach((key) => {
-              this.emailForm.controls[key].setErrors(null);
-            });
             this.isSending = false;
           },
           (err) => {

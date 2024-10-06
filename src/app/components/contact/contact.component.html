@@ -38,29 +38,40 @@
                 </div>
             </div>
         </div>
-        <form [formGroup]="emailForm" (ngSubmit)="sendEmail()" class="app-contact__form">
+        <form [formGroup]="emailForm" (ngSubmit)="sendEmail()" class="app-contact__form" #emailFormDirective="ngForm">
             <div class="app-contact__form-row">
                 <mat-form-field class="app-contact__form-field">
                     <mat-label>Your Name</mat-label>
                     <input matInput type="text" formControlName="fromName">
-                    <mat-error *ngIf="emailForm.controls['fromName'].errors?.['required']" class="app-contact__error">
+                    <mat-error>
                         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="warning"></mat-icon>
-                        Please
-                        fill out this field.
+                        {{ emailForm.get('fromName')?.errors | validationErrorMessage }}
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field class="app-contact__form-field">
                     <mat-label>Your Email</mat-label>
-                    <input matInput type="emial" formControlName="fromEmail">
+                    <input matInput type="email" formControlName="fromEmail">
+                    <mat-error>
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="warning"></mat-icon>
+                        {{ emailForm.get('fromEmail')?.errors | validationErrorMessage }}
+                    </mat-error>
                 </mat-form-field>
             </div>
             <mat-form-field class="app-contact__form-field">
                 <mat-label>Subject</mat-label>
                 <input matInput type="text" formControlName="subject">
+                <mat-error>
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="warning"></mat-icon>
+                    {{ emailForm.get('subject')?.errors | validationErrorMessage }}
+                </mat-error>
             </mat-form-field>
             <mat-form-field class="app-contact__form-field">
                 <mat-label>Message</mat-label>
                 <textarea matInput rows="5" formControlName="message"></textarea>
+                <mat-error>
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="warning"></mat-icon>
+                    {{ emailForm.get('message')?.errors | validationErrorMessage }}
+                </mat-error>
             </mat-form-field>
             <button type="submit" mat-flat-button class="app-contact__form-btn" [disabled]="isSending">Send
                 message</button>
