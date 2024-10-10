@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Project } from 'src/app/interfaces/project';
 import { projectsData } from '../../data/projects-data';
 @Component({
@@ -6,13 +6,10 @@ import { projectsData } from '../../data/projects-data';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.sass'],
 })
-export class ProjectsComponent {
-  startAnimation = '';
+export class ProjectsComponent implements OnInit {
   projects: Project[];
 
   ngOnInit() {
-    this.startAnimation = 'start-animation';
-
     this.projects = projectsData;
   }
 }
