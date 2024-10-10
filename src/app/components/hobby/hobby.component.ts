@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-hobby',
   templateUrl: './hobby.component.html',
-  styleUrls: ['./hobby.component.sass']
+  styleUrls: ['./hobby.component.sass'],
 })
-export class HobbyComponent {
-
-}
+export class HobbyComponent {}

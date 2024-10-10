@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -6,18 +6,18 @@ import {
   FormGroupDirective,
   Validators,
 } from '@angular/forms';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import emailjs from '@emailjs/browser';
 import { emailJsData } from 'src/app/data/emailjsdata';
+import { SuccessMessageComponent } from '../common/success-message/success-message.component';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.sass'],
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent {
   @ViewChild('emailFormDirective') emailFormDirective: FormGroupDirective;
-
-  startAnimation = '';
 
   myEmail = 'karolinakowalczyk1999@gmail.com';
 
@@ -40,11 +40,13 @@ export class ContactComponent implements OnInit {
     message: this.emailForm.value.message,
   };
 
-  constructor(private fb: FormBuilder) {}
+  private snackBarConfig: MatSnackBarConfig = {
+    duration: 3000,
+    horizontalPosition: 'end',
+    verticalPosition: 'top',
+  };
 
-  ngOnInit() {
-    this.startAnimation = 'start-animation';
-  }
+  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {}
 
   assignCurrentFormValuesToTemplateParams() {
     this.templateParams = {
@@ -71,15 +73,19 @@ export class ContactComponent implements OnInit {
         )
         .then(
           (response) => {
-            //show success toast
-            console.log('SUCCESS!', response.status, response.text);
+            this.snackBar.openFromComponent(SuccessMessageComponent, {
+              data: 'Your message was sent successfully!',
+              ...this.snackBarConfig,
+            });
             this.emailFormDirective.resetForm();
             this.emailForm.reset();
             this.isSending = false;
           },
           (err) => {
-            //show error toast
-            console.log('FAILED...', err);
+            this.snackBar.openFromComponent(SuccessMessageComponent, {
+              data: 'An error occured. Please try again later.',
+              ...this.snackBarConfig,
+            });
             this.isSending = false;
           }
         );
